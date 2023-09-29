@@ -16,15 +16,12 @@ public:
     if (leftSubtree == NULL && rightSubtree == NULL) {
         return true;
     }
-    
-   
     if (leftSubtree == NULL || rightSubtree == NULL) {
         return false;
     }
-    
-    
     return (leftSubtree->val == rightSubtree->val) && isMirror(leftSubtree->left, rightSubtree->right) &&                             isMirror(leftSubtree->right, rightSubtree->left);
-}
+    }
+    
     
     bool isSymmetric(TreeNode* root) {
        if(root == NULL){

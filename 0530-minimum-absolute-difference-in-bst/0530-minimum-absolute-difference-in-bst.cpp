@@ -24,7 +24,7 @@ public:
     int getMinimumDifference(TreeNode* root) {
         vector<int> arr = inOrder(root);
         int result = INT_MAX;
-        sort(arr.begin(), arr.end());
+        // sort(arr.begin(), arr.end());
         
          for(int i=0;i<arr.size()-1;i++){
             result = min(arr[i+1]-arr[i],result);

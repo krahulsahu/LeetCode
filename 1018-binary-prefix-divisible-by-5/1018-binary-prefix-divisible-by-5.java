@@ -1,17 +1,16 @@
 class Solution {
     public List<Boolean> prefixesDivBy5(int[] nums) {
         List<Boolean> res = new ArrayList<>();
-        int value = 0;
-        for (int i = 0; i < nums.length; i++) {
-            value = (value * 2 + nums[i]) % 5;
-
-            if (value == 0) {
+        int sum = 0;
+        for(int i=0;i<nums.length;i++){
+            sum= sum*2+nums[i];
+            sum = sum % 5;
+            if(sum ==0){
                 res.add(true);
-            } else {
+            }else{
                 res.add(false);
             }
         }
         return res;
     }
-
 }

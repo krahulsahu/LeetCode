@@ -1,28 +1,26 @@
 class Solution {
-public boolean backspaceCompare(String s, String t) {
-    return processString(s).equals(processString(t));
-}
-
-public String processString(String str) {
-    Stack<Character> stack = new Stack<>();
-
-    for (char c : str.toCharArray()) {
-        if (c == '#') {
-            if (!stack.isEmpty()) {
-                stack.pop();
+    public boolean backspaceCompare(String s, String t) {
+        return stringprocess(s).equals(stringprocess(t));
+    }
+    public String stringprocess(String x){
+        Stack<Character> st = new Stack<>();
+        
+        for(char i : x.toCharArray()){
+            if(i == '#'){
+                if(!st.isEmpty()){
+                    st.pop();
+                }
             }
-        } else {
-            stack.push(c);
+            else{
+                st.push(i);
+            }
+            
         }
+        StringBuilder res = new StringBuilder();
+            for(char c:st){
+                res.append(c);
+            }
+        return res.toString();
+       
     }
-
-    // Convert the stack to a string
-    StringBuilder result = new StringBuilder();
-    for (char c : stack) {
-        result.append(c);
-    }
-
-    return result.toString();
-}
-
 }

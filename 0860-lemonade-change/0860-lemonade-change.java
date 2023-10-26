@@ -19,8 +19,7 @@ class Solution {
                     five--;
                 }
             }
-            else if(bills[i] == 20){
-                twenty++;
+            else
                 if(ten > 0 && five > 0){
                     ten--;
                     five--;
@@ -31,7 +30,6 @@ class Solution {
                 else{
                     return false;
                 }   
-            }
         }
         return true;
     }
